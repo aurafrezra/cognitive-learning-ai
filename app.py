@@ -1,36 +1,51 @@
 import streamlit as st
 import json
-import os
+import networkx as nx
+import matplotlib.pyplot as plt
+
+# Set Streamlit page config
+st.set_page_config(page_title="Personalized Cognitive Learning AI", layout="centered")
+
+st.title("🧠 Personalized Cognitive Learning AI")
+st.write("This app visualizes your concept mastery and tracks what you might forget.")
 
 # Load responses
-def load_responses():
-    try:
-        with open("data/responses.json", "r") as file:
-            return json.load(file)
-    except FileNotFoundError:
-        return []
+try:
+    with open("riz_responses.json", "r") as f:
+        responses = json.load(f)
+except FileNotFoundError:
+    responses = []
 
-# Display the quiz results nicely
-def show_results(responses):
+# Show load button
+if st.button("📥 Load My Learning Data"):
     if not responses:
-        st.info("No responses recorded yet.")
-        return
+        st.warning("No responses recorded yet.")
+    else:
+        st.success("Responses loaded!")
 
-    st.subheader("🧠 Quiz Responses & Confidence")
-    for entry in responses:
-        st.markdown(f"""
-        **Concept:** {entry['concept']}  
-        ✅ Correct: {"Yes" if entry['correct'] else "No"}  
-        📊 Confidence: {entry['confidence']}  
-        ⏱️ Time Taken: {entry['time_taken']} seconds  
-        📝 Your Answer: {entry['answer']}
-        ---
-        """)
+        # Create knowledge graph
+        G = nx.DiGraph()
+        for r in responses:
+            concept = r["concept"]
+            correctness = "✅" if r["correct"] else "❌"
+            label = f"{concept}\n{correctness} | Conf: {r['confidence']} | Time: {round(r['time_taken'], 1)}s"
+            G.add_node(label)
 
-# Streamlit UI
-st.title("🧠 Personalized Cognitive Learning AI")
-st.markdown("This app visualizes your concept mastery and tracks what you might forget.")
+        # Simple edges for visualization
+        for i in range(len(G.nodes) - 1):
+            source = list(G.nodes)[i]
+            target = list(G.nodes)[i + 1]
+            G.add_edge(source, target)
 
-if st.button("🔄 Load My Learning Data"):
-    responses = load_responses()
-    show_results(responses)
+        # Plot
+        pos = nx.spring_layout(G, seed=42)
+        plt.figure(figsize=(12, 6))
+        nx.draw(G, pos, with_labels=True, node_color="skyblue", node_size=2500, font_size=8, font_weight="bold", edge_color="gray")
+        st.pyplot(plt)
+
+# Show raw responses
+st.subheader("📊 Your Learning Data")
+if responses:
+    st.json(responses)
+else:
+    st.info("No data to show yet.")
