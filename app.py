@@ -1,7 +1,9 @@
+
 import streamlit as st
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
+import os
 
 # Set Streamlit page config
 st.set_page_config(page_title="Personalized Cognitive Learning AI", layout="centered")
@@ -10,8 +12,10 @@ st.title("🧠 Personalized Cognitive Learning AI")
 st.write("This app visualizes your concept mastery and tracks what you might forget.")
 
 # Load responses
+response_file_path = os.path.join("user_data", "riz_responses.json")
+
 try:
-    with open("riz_responses.json", "r") as f:
+    with open(response_file_path, "r") as f:
         responses = json.load(f)
 except FileNotFoundError:
     responses = []
@@ -40,7 +44,16 @@ if st.button("📥 Load My Learning Data"):
         # Plot
         pos = nx.spring_layout(G, seed=42)
         plt.figure(figsize=(12, 6))
-        nx.draw(G, pos, with_labels=True, node_color="skyblue", node_size=2500, font_size=8, font_weight="bold", edge_color="gray")
+        nx.draw(
+            G,
+            pos,
+            with_labels=True,
+            node_color="skyblue",
+            node_size=2500,
+            font_size=8,
+            font_weight="bold",
+            edge_color="gray",
+        )
         st.pyplot(plt)
 
 # Show raw responses
