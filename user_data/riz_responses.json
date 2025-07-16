@@ -1,0 +1,90 @@
+[
+  {
+    "concept": "Newton's Third Law",
+    "answer": "If you push something, it pushes back with the same force in the opposite direction",
+    "correct": true,
+    "confidence": 3,
+    "time_taken": 14.43,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Newton's First Law",
+    "answer": "It means heavier objects need more force to speed up",
+    "correct": true,
+    "confidence": 3,
+    "time_taken": 12.29,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Force",
+    "answer": "It can make things move, stop, or change direction. Measured in Newtons (N)",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 75.23,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Newton's Second Law",
+    "answer": "Newton’s Second Law says that Force = Mass × Acceleration. It means heavier objects need more force to move or speed up",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 23.97,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Impulse",
+    "answer": "Impulse = Force × Time = Change in momentum. It's useful in situations like airbags or cricket catches to reduce force by increasing time",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 19.29,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Inertia",
+    "answer": "More mass means more inertia — that’s why heavier things are harder to move or stop",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 15.86,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Matter",
+    "answer": "Everything around us — solids, liquids, and gases — is made of matter.",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 16.43,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Momentum",
+    "answer": "Heavier or faster objects have more momentum. It helps understand collisions and motion",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 13.69,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Mass",
+    "answer": "Mass doesn’t change with location and is measured in kilograms (kg)",
+    "correct": true,
+    "confidence": 3,
+    "time_taken": 10.08,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Acceleration",
+    "answer": "It happens when something speeds up, slows down, or changes direction. Measured in m/s².",
+    "correct": true,
+    "confidence": 4,
+    "time_taken": 10.82,
+    "timestamp": "2025-07-15 14:30:00"
+  },
+  {
+    "concept": "Collision Types",
+    "answer": "Elastic: energy & momentum conserved. Inelastic: only momentum conserved. Perfectly inelastic: objects stick together.",
+    "correct": true,
+    "confidence": 3,
+    "time_taken": 13.96,
+    "timestamp": "2025-07-15 14:30:00"
+  }
+]
