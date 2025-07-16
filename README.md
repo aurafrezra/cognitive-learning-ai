@@ -74,7 +74,7 @@ This project was built as part of my MIT portfolio to showcase a new way to lear
 
 🙌 Created By
 Built with 💻 and 🚀 by @aurafrezra
-MIT Hopeful | JEE AIR 1 Aspirant | AI Innovator
+MIT Hopeful | AI Innovator
 
 📌 License
 This project is open-source under the MIT license.
